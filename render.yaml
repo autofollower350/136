@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: selenium-bot
+    runtime: python
+    buildCommand: bash startup.sh
+    startCommand: python app.py
+    plan: free

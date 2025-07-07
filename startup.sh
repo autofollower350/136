@@ -12,7 +12,7 @@ mkdir -p /tmp/chromedriver-bin
 # Download and extract Chrome
 wget -q https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.113/linux64/chrome-linux64.zip
 unzip -q chrome-linux64.zip
-mv chrome-linux64/chrome-linux64/chrome /tmp/chrome-bin/chrome
+mv chrome-linux64/chrome /tmp/chrome-bin/chrome
 
 # Download and extract ChromeDriver
 wget -q -O chromedriver.zip https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.113/linux64/chromedriver-linux64.zip

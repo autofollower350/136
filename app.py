@@ -10,7 +10,7 @@ chromedriver_path = os.path.abspath(".chromedriver/chromedriver")
 if not os.path.exists(chrome_path):
     raise Exception("❌ Chrome not found at: " + chrome_path)
 
-# ✅ Generate a fresh random user-data-dir every time
+# ✅ Generate unique temp user-data-dir to avoid conflicts
 user_data_dir = tempfile.mkdtemp()
 
 options = Options()

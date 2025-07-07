@@ -14,5 +14,6 @@ unzip -q chromedriver.zip
 mv chromedriver-linux64/chromedriver /usr/bin/chromedriver
 chmod +x /usr/bin/chromedriver
 
-echo "✅ Chrome + ChromeDriver installed"
+echo "✅ Chrome and ChromeDriver installed"
+ls -l /usr/bin/google-chrome
 ls -l /usr/bin/chromedriver

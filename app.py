@@ -9,12 +9,19 @@ chromedriver_path = os.path.abspath(".chromedriver/chromedriver")
 if not os.path.exists(chrome_path):
     raise Exception("❌ Chrome not found at: " + chrome_path)
 
+# Create temp user data dir for Chrome
+user_data_dir = "/tmp/chrome-user-data"
+os.makedirs(user_data_dir, exist_ok=True)
+
+# Chrome options
 options = Options()
 options.binary_location = chrome_path
 options.add_argument("--headless")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
+options.add_argument(f"--user-data-dir={user_data_dir}")  # ✅ this fixes the issue
 
+# Launch Chrome
 driver = webdriver.Chrome(service=Service(chromedriver_path), options=options)
 driver.get("https://www.google.com")
 print("✅ Opened:", driver.title)

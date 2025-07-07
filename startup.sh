@@ -2,18 +2,19 @@
 
 echo "📦 Installing Chrome and ChromeDriver..."
 
-# Install Chrome (v136)
+# Create local bin dir
+mkdir -p /tmp/chrome-bin
+mkdir -p /tmp/chromedriver-bin
+
+# Download Chrome
 wget -q https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.113/linux64/chrome-linux64.zip
 unzip -q chrome-linux64.zip
-mv chrome-linux64 /opt/chrome
-ln -sf /opt/chrome/chrome /usr/bin/google-chrome
+mv chrome-linux64/* /tmp/chrome-bin
 
-# Install matching ChromeDriver (v136)
+# Download ChromeDriver
 wget -q -O chromedriver.zip https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.113/linux64/chromedriver-linux64.zip
 unzip -q chromedriver.zip
-mv chromedriver-linux64/chromedriver /usr/bin/chromedriver
-chmod +x /usr/bin/chromedriver
+mv chromedriver-linux64/chromedriver /tmp/chromedriver-bin/chromedriver
+chmod +x /tmp/chromedriver-bin/chromedriver
 
-echo "✅ Chrome and ChromeDriver installed"
-ls -l /usr/bin/google-chrome
-ls -l /usr/bin/chromedriver
+echo "✅ Chrome and ChromeDriver installed to /tmp"
